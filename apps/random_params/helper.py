@@ -46,9 +46,9 @@ class AllInstruments:
             def __str__(self):
                 if self.value == 1: return 'water_standpipe'
                 if self.value == 2: return 'piezometer'
-                if self.value == 3: return 'settlement marker x'
-                if self.value == 4: return 'settlement marker y'
-                if self.value == 5: return 'settlement marker z'
+                if self.value == 3: return 'settlement_marker'
+                if self.value == 4: return 'extensometer'
+                if self.value == 5: return 'strain_gauge'
 
 
         def serialize(self):
@@ -57,7 +57,7 @@ class AllInstruments:
             '''
             return {
                 'borehole_number': f'BH-{self.id}',
-                'instrument': f'self.instrument',
+                'instrument': f'{self.instrument}',
                 'surface_level': self.surface_level,
                 'northing': self.northing,
                 'easting': self.easting
