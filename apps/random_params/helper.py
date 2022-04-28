@@ -57,7 +57,6 @@ class AllInstruments:
             '''
             return {
                 'borehole_number': f'BH-{self.id}',
-                'instrument': f'{self.instrument}',
                 'surface_level': self.surface_level,
                 'northing': self.northing,
                 'easting': self.easting

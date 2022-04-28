@@ -32,16 +32,15 @@ The following subsections provide examples of the different structures of each r
 {
     "request_type": "water_standpipe", 
     "length": 127, 
-    "RL_units": "AHD (m)", 
+    "units": "water level (m)", 
     "timezone": "UTC", 
     "items": [
         {
             "borehole_number": "BH-9037", 
-            "instrument": "water_standpipe", 
             "surface_level": 85.4, 
             "northing": 5814941, 
             "easting": 323796, 
-            "water_level": 86.25, 
+            "reading": 86.25, 
             "timestamp": "2022-04-15T22:01:29.078Z"
         }, 
         ...
@@ -56,16 +55,15 @@ Pore pressure, `pwp` is measured in `kPa`.
 {
     "request_type": "piezometer", 
     "length": 56, 
-    "RL_units": "AHD (m)", 
+    "units": "pressure (kPa)", 
     "timezone": "UTC", 
     "items": [
         {
             "borehole_number": "BH-9483", 
-            "instrument": "piezometer", 
             "surface_level": 82.33, 
             "northing": 5810968, 
             "easting": 322179, 
-            "pwp": 113.96, 
+            "reading": 113.96, 
             "timestamp": "2022-04-15T22:06:38.737Z"
         }, 
         ....
@@ -80,16 +78,15 @@ Displacement, `displacement` is measured in `mm`. Whether the `x`, `y`, or `z` e
 {
     "request_type": "settlement marker (x-direction)", 
     "length": 70, 
-    "RL_units": "AHD (m)", 
+    "units": "displacement (mm)", 
     "timezone": "UTC", 
     "items": [
         {
             "borehole_number": "BH-1405", 
-            "instrument": "settlement marker x", 
             "surface_level": 77.25, 
             "northing": 5811792, 
             "easting": 317017, 
-            "displacement": -28.7, 
+            "reading": -28.7, 
             "timestamp": "2022-04-15T22:11:16.923Z"
         }, 
         ...
@@ -108,7 +105,7 @@ This is just a collection of all monitoring points, in the same structure as the
         {
             "request_type": "water_standpipe", 
             "length": 89, 
-            "RL_units": "AHD (m)", 
+            "units": "water level (m)", 
             "timezone": "UTC", 
             "items": [...]
         },
@@ -116,7 +113,7 @@ This is just a collection of all monitoring points, in the same structure as the
         {
             "request_type": "piezometer", 
             "length": 56, 
-            "RL_units": "AHD (m)", 
+            "units": "pressure (kPa)", 
             "timezone": "UTC", 
             "items": [...]
         },
@@ -124,7 +121,7 @@ This is just a collection of all monitoring points, in the same structure as the
         {
             "request_type": "settlement marker (x-direction)", 
             "length": 70, 
-            "RL_units": "AHD (m)", 
+            "units": "displacement (mm)", 
             "timezone": "UTC", 
             "items": [...]
         },

@@ -24,7 +24,7 @@ def water_standpipe():
 
     # add monitoring results for standpipe
     for entry in ws_list:
-        entry['water_level'] = round(
+        entry['reading'] = round(
             entry['surface_level'] + random.uniform(-10.0, 2.0), 2
         )
         entry['timestamp'] = datetime.now(timezone.utc)
@@ -32,7 +32,7 @@ def water_standpipe():
     return {
         'request_type': 'water_standpipe',
         'length': len(ws_list),
-        'RL_units': 'AHD (m)',
+        'units': 'water level (m)',
         'timezone': 'UTC',
         'items': ws_list
     }
@@ -51,13 +51,13 @@ def pore_pressure():
 
     # add monitoring results for piezometer
     for entry in pp_list:
-        entry['pwp'] = round(random.uniform(20.0, 200.0), 2)
+        entry['reading'] = round(random.uniform(20.0, 200.0), 2)
         entry['timestamp'] = datetime.now(timezone.utc)
     
     return {
         'request_type': 'piezometer',
         'length': len(pp_list),
-        'RL_units': 'AHD (m)',
+        'units': 'pressure (kPa)',
         'timezone': 'UTC',
         'items': pp_list
     }
@@ -91,13 +91,13 @@ def settlement(direction):
 
     # add monitoring results for settlement marker
     for entry in settlement_list:
-        entry['displacement'] = round(random.uniform(-30.0, 30.0), 2)
+        entry['reading'] = round(random.uniform(-30.0, 30.0), 2)
         entry['timestamp'] = datetime.now(timezone.utc)
 
     return {
         'request_type': instrument_type,
         'length': len(settlement_list),
-        'RL_units': 'AHD (m)',
+        'units': 'displacement (mm)',
         'timezone': 'UTC',
         'items': settlement_list
     }
