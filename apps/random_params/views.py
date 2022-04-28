@@ -30,8 +30,7 @@ def water_standpipe():
         entry['timestamp'] = datetime.now(timezone.utc)
     
     return {
-        'request_type': 'water_standpipe',
-        'length': len(ws_list),
+        'instruments': len(ws_list),
         'units': 'water level (m)',
         'timezone': 'UTC',
         'items': ws_list
@@ -55,8 +54,7 @@ def pore_pressure():
         entry['timestamp'] = datetime.now(timezone.utc)
     
     return {
-        'request_type': 'piezometer',
-        'length': len(pp_list),
+        'instruments': len(pp_list),
         'units': 'pressure (kPa)',
         'timezone': 'UTC',
         'items': pp_list
@@ -95,8 +93,7 @@ def settlement(direction):
         entry['timestamp'] = datetime.now(timezone.utc)
 
     return {
-        'request_type': instrument_type,
-        'length': len(settlement_list),
+        'instruments': len(settlement_list),
         'units': 'displacement (mm)',
         'timezone': 'UTC',
         'items': settlement_list
@@ -143,8 +140,7 @@ def all(request):
     
     return JsonResponse(
         {
-            'request_type': 'all_instruments',
-            'total_length': total_length,
+            'instruments': total_length,
             'standpipe_data': ws_data,
             'piezometer_data': pp_data,
             'settlement_x_data': sx_data,
