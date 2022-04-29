@@ -29,14 +29,14 @@ The following subsections provide examples of the different structures of each r
 ### `params/water_standpipe/`
 
 ```json
-{
-    "request_type": "water_standpipe", 
-    "length": 127, 
+{ 
+    "instruments": 127, 
     "units": "water level (m)", 
     "timezone": "UTC", 
     "items": [
         {
             "borehole_number": "BH-9037", 
+            "instrument": "water_standpipe",
             "surface_level": 85.4, 
             "northing": 5814941, 
             "easting": 323796, 
@@ -53,13 +53,13 @@ Pore pressure, `pwp` is measured in `kPa`.
 
 ```json
 {
-    "request_type": "piezometer", 
-    "length": 56, 
+    "instruments": 56, 
     "units": "pressure (kPa)", 
     "timezone": "UTC", 
     "items": [
         {
             "borehole_number": "BH-9483", 
+            "instrument": "piezometer",
             "surface_level": 82.33, 
             "northing": 5810968, 
             "easting": 322179, 
@@ -76,13 +76,13 @@ Displacement, `displacement` is measured in `mm`. Whether the `x`, `y`, or `z` e
 
 ```json
 {
-    "request_type": "settlement marker (x-direction)", 
-    "length": 70, 
+    "instruments": 70, 
     "units": "displacement (mm)", 
     "timezone": "UTC", 
     "items": [
         {
             "borehole_number": "BH-1405", 
+            "instrument": "settlement_marker",
             "surface_level": 77.25, 
             "northing": 5811792, 
             "easting": 317017, 
@@ -103,24 +103,21 @@ This is just a collection of all monitoring points, in the same structure as the
     "total_length": 553, 
     "standpipe_data": 
         {
-            "request_type": "water_standpipe", 
-            "length": 89, 
+            "instruments": 89, 
             "units": "water level (m)", 
             "timezone": "UTC", 
             "items": [...]
         },
     "piezometer_data":
         {
-            "request_type": "piezometer", 
-            "length": 56, 
+            "instruments": 56, 
             "units": "pressure (kPa)", 
             "timezone": "UTC", 
             "items": [...]
         },
     "settlement_x_data":
         {
-            "request_type": "settlement marker (x-direction)", 
-            "length": 70, 
+            "instruments": 70, 
             "units": "displacement (mm)", 
             "timezone": "UTC", 
             "items": [...]
